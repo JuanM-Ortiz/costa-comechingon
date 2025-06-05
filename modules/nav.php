@@ -11,16 +11,16 @@
         <div class="collapse navbar-collapse justify-content-end ps-5" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link <?= $pagina == 'index.php' ? 'active-link' : '' ?> text-dark fw-bold fs-5" href="/index.php">Inicio</a>
+                    <a class="nav-link <?= $pagina == 'index.php' ? 'active-link' : '' ?> text-dark fw-bold fs-5" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $pagina == 'propiedades.php' ? 'active-link' : '' ?> text-dark fw-bold fs-5" href="/propiedades.php">Propiedades</a>
+                    <a class="nav-link <?= $pagina == 'propiedades.php' ? 'active-link' : '' ?> text-dark fw-bold fs-5" href="propiedades.php">Propiedades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $pagina == 'nosotros.php' ? 'active-link' : '' ?> text-dark fw-bold fs-5" href="/nosotros.php">Nosotros</a>
+                    <a class="nav-link <?= $pagina == 'nosotros.php' ? 'active-link' : '' ?> text-dark fw-bold fs-5" href="nosotros.php">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $pagina == 'contacto.php' ? 'active-link' : '' ?> text-dark fw-bold fs-5" href="/contacto.php">Contacto</a>
+                    <a class="nav-link <?= $pagina == 'contacto.php' ? 'active-link' : '' ?> text-dark fw-bold fs-5" href="contacto.php">Contacto</a>
                 </li>
             </ul>
         </div>
