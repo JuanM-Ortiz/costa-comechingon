@@ -6,6 +6,14 @@ body {
   color: #7c1c2b;
 }
 
+.bg-bordo {
+  background-color: #7c1c2b;
+}
+
+.section-bajo-navbar {
+  padding-top: 100px;
+}
+
 .btn-light-gray {
   background-color: #eeeeee;
   color: #333;
@@ -193,3 +201,113 @@ body {
   opacity: 1;
 }
 
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.active-link::after {
+  width: 100%;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.equipo {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fdfdfd;
+}
+
+.equipo h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.equipo p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.card-profesional {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.card-profesional .foto {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+}
+
+.card-profesional h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card-profesional .cargo {
+  font-weight: bold;
+  color: #666;
+  margin: 5px 0 10px;
+}
+
+.card-profesional .info-extra {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.card-profesional .area {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-profesional .especialidad {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.foto {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ddd;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

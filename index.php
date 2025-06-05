@@ -9,27 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
 
   <!-- Header -->
-  <nav class="navbar navbar-expand-lg bg-transparent position-absolute w-100 top-0 z-3 px-4">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" alt="Costa Comechingón" height="50">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link text-dark fw-bold fs-5" href="#">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link text-dark fw-bold fs-5" href="#">Propiedades</a></li>
-          <li class="nav-item"><a class="nav-link text-dark fw-bold fs-5" href="#">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link text-dark fw-bold fs-5" href="#">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include_once 'modules/nav.html'; ?>
 
   <!-- Hero -->
   <section class="hero d-flex align-items-center justify-content-center text-center text-white">
@@ -43,7 +26,8 @@
     </div>
   </section>
 
-  <?php include_once 'modules/propiedadesDestacadas.html'; ?>
+  <h2 class="text-center pt-5 mb-4">Propiedades Destacadas</h2>
+  <?php include_once 'modules/propiedadesMuestrario.html'; ?>
 
   <?php include_once 'modules/nuestraHistoria.html'; ?>
 
