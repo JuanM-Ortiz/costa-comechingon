@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-light">
-    <?php include_once "modules/nav.html"; ?>
+    <?php include_once "modules/nav.php"; ?>
 
     <section class="bg-light section-bajo-navbar">
         <div class="container text-center">

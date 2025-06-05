@@ -14,7 +14,7 @@
 
 
 <body class="bg-light">
-    <?php include_once "modules/nav.html"; ?>
+    <?php include_once "modules/nav.php"; ?>
 
     <section class="container section-bajo-navbar">
         <div class="text-center mb-5">

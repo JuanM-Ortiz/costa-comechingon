@@ -12,8 +12,8 @@
 </head>
 
 <body class="bg-light">
-    <?php include_once "modules/nav.html"; ?>
-        
+    <?php include_once "modules/nav.php"; ?>
+
     <section class="text-center bg-light section-bajo-navbar">
         <div class="container">
             <h2 class="display-5 fw-bold">Nuestras Propiedades</h2>
