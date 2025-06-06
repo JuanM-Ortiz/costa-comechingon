@@ -1,6 +1,6 @@
 <?php $pagina = basename($_SERVER['PHP_SELF']); ?>
 
-<nav class="navbar navbar-expand-lg bg-light position-absolute w-100 top-0 z-3 px-4">
+<nav class="navbar navbar-expand-lg bg-light fixed-top w-100 z-3 px-4">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="/assets/img/logo/logo.png" alt="Costa Comechingón" height="50">

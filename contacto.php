@@ -67,9 +67,11 @@
                     </p>
                 </div>
 
-                <div class="bg-light rounded p-3 border border-success-subtle">
-                    <p class="mb-2"><strong>¿Necesitás respuesta inmediata?</strong><br>Chateá con nosotros por WhatsApp y obtené información al instante</p>
-                    <a href="https://wa.me/549XXXXXXXXXX" class="btn btn-success w-100 fw-bold">
+                <div class="whatsapp-floating-box hidden">
+                    <p class="mb-2 fw-semibold">¿Necesitás respuesta inmediata?<br>
+                        <span class="fw-normal">Chateá con nosotros por WhatsApp y obtené información al instante</span>
+                    </p>
+                    <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="btn btn-success w-100 fw-bold">
                         <i class="bi bi-whatsapp me-2"></i>Abrir WhatsApp
                     </a>
                 </div>
@@ -77,19 +79,22 @@
         </div>
 
         <!-- Mapa -->
-        <div class="mt-5 py-5">
-            <h4 class="fw-bold mb-3">Ubicación</h4>
+        <div class="mt-5">
+            <h4 class="fw-bold mb-3 text-center">Nuestra Ubicación</h4>
             <div class="ratio ratio-16x9">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d708.4270719360266!2d-65.01625867945259!3d-32.36913851087354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2e3eefc633565%3A0xb1ecbc477aea83d2!2sCOSTA%20COMECHING%C3%93N!5e0!3m2!1ses-419!2sar!4v1749139440808!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d708.4270719360266!2d-65.01625867945259!3d-32.36913851087354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2e3eefc633565%3A0xb1ecbc477aea83d2!2sCOSTA%20COMECHING%C3%93N!5e0!3m2!1ses-419!2sar!4v1749139440808!5m2!1ses-419!2sar" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
-    <?php include_once "modules/footer.html"; ?>
+    <section class="border-top border-dark-subtle">
+        <?php include_once "modules/footer.html"; ?>
+    </section>
+    
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
