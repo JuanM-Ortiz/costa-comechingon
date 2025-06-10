@@ -83,7 +83,7 @@
     </div> -->
 
     <section class="equipo">
-        <h2 class="text-verde-oscuro">Nuestro equipo profesional</h2>
+        <h2 class="text-verde-oscuro display-5 fw-bold">Nuestro equipo profesional</h2>
         <p class="text-verde-oscuro">
             Contamos con un equipo multidisciplinario de profesionales matriculados y con amplia
             experiencia en el sector inmobiliario y de desarrollo urbano.

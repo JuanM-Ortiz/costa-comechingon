@@ -18,7 +18,7 @@
 
     <section class="container section-bajo-navbar">
         <div class="text-center mb-5">
-            <h2 class="fw-bold text-verde-oscuro">Contactanos</h2>
+            <h2 class="fw-bold text-verde-oscuro display-5">Contactanos</h2>
             <p class="text-verde-oscuro">¿Interesado en conocer más sobre nuestros desarrollos? Completá el formulario y un asesor especializado se pondrá en contacto contigo a la brevedad.</p>
         </div>
 
