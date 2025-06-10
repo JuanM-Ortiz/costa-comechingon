@@ -7,14 +7,14 @@
     <title>Costa Comechingón</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
     <?php include_once "modules/nav.php"; ?>
 
-    <div class="historia-fondo">
+    <!-- <div class="historia-fondo">
         <section class="section-bajo-navbar">
             <div class="container text-center">
                 <h2 class="fw-bold mb-4">Nuestra historia, tu futuro</h2>
@@ -80,11 +80,11 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
 
     <section class="equipo">
-        <h2>Nuestro equipo profesional</h2>
-        <p>
+        <h2 class="text-verde-oscuro">Nuestro equipo profesional</h2>
+        <p class="text-verde-oscuro">
             Contamos con un equipo multidisciplinario de profesionales matriculados y con amplia
             experiencia en el sector inmobiliario y de desarrollo urbano.
         </p>

@@ -7,6 +7,14 @@
         box.classList.add('show');
       }, 200);
     }
+    const wh = document.querySelector('.whatsapp-floating');
+    console.log(wh);
+    if (wh) {
+      setTimeout(() => {
+        wh.classList.remove('hidden');
+        wh.classList.add('show');
+      }, 200);
+    }
   });
 
   document.getElementById("currentYear").textContent = new Date().getFullYear();
