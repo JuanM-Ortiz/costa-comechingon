@@ -53,6 +53,16 @@ body {
   filter: brightness(1.1);
 }
 
+.form-control{
+  border-color: #244210!important;
+}
+
+.form-control:focus {
+    border-color: #25a55f!important;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(37, 165, 95, .25) !important; 
+}
+
 .bg-bordo {
   background-color: #7c1c2b;
 }
@@ -68,7 +78,6 @@ body {
 .iconos{
   color: #244210 !important;
 }
-
 
 .section-bajo-navbar {
   padding-top: 100px;
@@ -86,7 +95,7 @@ body {
 
 .hero {
   height: 100vh;
-  background-image: url('assets/img/banner1.png');
+  background-image: url('../img/banner1.png');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -218,7 +227,7 @@ body {
 }
 
 .historia-fondo {
-  background-image: url('assets/img/banner2.png');
+  background-image: url('../img/banner2.png');
   background-size: cover;
   background-position: top;
   padding: 5rem 1rem;

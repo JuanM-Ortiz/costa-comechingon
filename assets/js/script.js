@@ -8,7 +8,6 @@
       }, 200);
     }
     const wh = document.querySelector('.whatsapp-floating');
-    console.log(wh);
     if (wh) {
       setTimeout(() => {
         wh.classList.remove('hidden');
