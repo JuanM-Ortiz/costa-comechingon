@@ -20,6 +20,10 @@ body {
   text-decoration: none;
 }
 
+.bg-verde-oscuro {
+  background-color: #244210;
+}
+
 .btn-marron{
   background-color: #685743;
   color: #fff;
