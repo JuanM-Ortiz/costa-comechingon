@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-06-2025 a las 17:02:39
+-- Tiempo de generación: 15-06-2025 a las 22:58:30
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -65,7 +65,8 @@ CREATE TABLE `banners` (
 
 INSERT INTO `banners` (`id`, `titulo`, `descripcion`, `img`, `deleted_at`) VALUES
 (1, 'Lorem Ipsum', 'Desarrollos inmobiliarios en el corazón de la Villa de Merlo', 'banner1.png', NULL),
-(2, 'Lorem Ipsum 2', 'Desarrollos inmobiliarios en el corazón de la Villa de Merlo', 'banner2.png', NULL);
+(2, 'Lorem Ipsum 2', 'Desarrollos inmobiliarios en el corazón de la Villa de Merlo', 'banner2.png', NULL),
+(3, 'Lorem Ipsum 3', 'Test banner 3 ', '105722105524main.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -76,6 +77,7 @@ INSERT INTO `banners` (`id`, `titulo`, `descripcion`, `img`, `deleted_at`) VALUE
 CREATE TABLE `comodidades` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
+  `fa_icon` varchar(150) DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -83,10 +85,10 @@ CREATE TABLE `comodidades` (
 -- Volcado de datos para la tabla `comodidades`
 --
 
-INSERT INTO `comodidades` (`id`, `descripcion`, `deleted_at`) VALUES
-(1, 'Piscina', NULL),
-(2, 'Parrila', NULL),
-(3, 'Aire Acondicionado', NULL);
+INSERT INTO `comodidades` (`id`, `descripcion`, `fa_icon`, `deleted_at`) VALUES
+(1, 'Piscina', NULL, NULL),
+(2, 'Parrila', NULL, NULL),
+(3, 'Aire Acondicionado', 'fa-solid fa-snowflake  ', NULL);
 
 -- --------------------------------------------------------
 
@@ -207,6 +209,7 @@ CREATE TABLE `propiedades_tipo_publicaciones` (
 CREATE TABLE `servicios` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
+  `fa_icon` varchar(150) DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -214,13 +217,15 @@ CREATE TABLE `servicios` (
 -- Volcado de datos para la tabla `servicios`
 --
 
-INSERT INTO `servicios` (`id`, `descripcion`, `deleted_at`) VALUES
-(1, 'Gas', NULL),
-(2, 'Electricidad', NULL),
-(3, 'Agua corriente', NULL),
-(4, 'Internet', NULL),
-(5, 'Cable TV', NULL),
-(6, 'Tv Satelital', NULL);
+INSERT INTO `servicios` (`id`, `descripcion`, `fa_icon`, `deleted_at`) VALUES
+(1, 'Gas', NULL, NULL),
+(2, 'Electricidad', NULL, NULL),
+(3, 'Agua corriente', NULL, NULL),
+(4, 'Internet', NULL, NULL),
+(5, 'Cable TV', NULL, NULL),
+(6, 'Tv Satelital', NULL, NULL),
+(7, 'Wi-Fi', 'fa-solid fa-wifi  ', NULL),
+(8, 'CHILL DE COJONES', 'fa-solid fa-snowflake  ', NULL);
 
 -- --------------------------------------------------------
 
@@ -413,7 +418,7 @@ ALTER TABLE `ambientes`
 -- AUTO_INCREMENT de la tabla `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `comodidades`
@@ -467,7 +472,7 @@ ALTER TABLE `propiedades_tipo_publicaciones`
 -- AUTO_INCREMENT de la tabla `servicios`
 --
 ALTER TABLE `servicios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tipos_propiedad`
