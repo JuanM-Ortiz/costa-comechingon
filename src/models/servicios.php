@@ -30,7 +30,7 @@ class Servicios
 
   public function getServiciosByPropiedadId($id)
   {
-    $query = "SELECT s.descripcion 
+    $query = "SELECT s.descripcion, s.fa_icon
     FROM servicios s
     JOIN propiedades_servicios ps ON s.id = ps.id_servicio
     WHERE ps.id_propiedad = $id";
@@ -41,7 +41,7 @@ class Servicios
 
   public function getServiciosIdByPropiedadId($id)
   {
-    $query = "SELECT s.id 
+    $query = "SELECT s.id
     FROM servicios s
     JOIN propiedades_servicios ps ON s.id = ps.id_servicio
     WHERE ps.id_propiedad = $id";
@@ -64,9 +64,9 @@ class Servicios
     return true;
   }
 
-  public function editar($idServicio, $descripcion)
+  public function editar($idServicio, $descripcion, $faIcon = null)
   {
-    $query = "UPDATE servicios SET descripcion = '{$descripcion}'";
+    $query = "UPDATE servicios SET descripcion = '{$descripcion}', fa_icon = '{$faIcon}'";
 
     $query .= " WHERE id = $idServicio";
     $resultado = $this->conexion->prepare($query);
@@ -74,9 +74,9 @@ class Servicios
     return true;
   }
 
-  public function crear($descripcion)
+  public function crear($descripcion, $faIcon = null)
   {
-    $query = "INSERT INTO servicios (descripcion) VALUES ('{$descripcion}')";
+    $query = "INSERT INTO servicios (descripcion, fa_icon) VALUES ('{$descripcion}', '{$faIcon}')";
     $resultado = $this->conexion->prepare($query);
     $resultado->execute();
     return true;

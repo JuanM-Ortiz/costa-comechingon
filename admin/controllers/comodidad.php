@@ -30,13 +30,17 @@ if ($_POST['restaurar'] && $_POST['restaurar'] != '') {
 if ($_POST['descripcion']) {
   $conexion = Conexion::conectar();
   $comodidadesModel = new Comodidades($conexion);
+  if ($_POST['faIcon']) {
+    $faIcon = str_replace('selected', '', $_POST['faIcon']);
+    $faIcon = str_replace('icon-option', '', $faIcon);
+  }
   if ($_POST['comodidadId']) {
-    $comodidadesModel->editar($_POST['comodidadId'], $_POST['descripcion']);
+    $comodidadesModel->editar($_POST['comodidadId'], $_POST['descripcion'], $faIcon);
     echo 1;
     return;
   }
 
-  $comodidadesModel->crear($_POST['descripcion']);
+  $comodidadesModel->crear($_POST['descripcion'], $facIcon);
   echo 1;
   return;
 }

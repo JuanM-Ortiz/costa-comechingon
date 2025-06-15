@@ -38,7 +38,7 @@ if (!$_SESSION['user']) {
   <div class="container vh-100 mt-5">
     <div class="d-flex mt-5 justify-content-between mb-3">
       <h5>Banners</h5>
-      <button class="btn btn-success fw-bold" id="agregarAmbiente"><i class="fa fa-plus"></i> Nuevo banner</button>
+      <button class="btn btn-success fw-bold" id="agregarBanner"><i class="fa fa-plus"></i> Nuevo banner</button>
     </div>
 
     <table class="table table-primary" id="datatable">
@@ -55,7 +55,7 @@ if (!$_SESSION['user']) {
       </tbody>
     </table>
   </div>
-  <?php include_once 'modales/abm-ambientes.html'; ?>
+  <?php include_once 'modales/abm-banners.html'; ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="assets/js/jquery.min.js"></script>
@@ -110,7 +110,7 @@ if (!$_SESSION['user']) {
     var data = $('#datatable').DataTable().row(fila).data();
     idBanner = data['id'];
     if (confirm("¿Está seguro que desea eliminar el banner seleccionado?") == true) {
-      $.post("controllers/bannerProductos.php", {
+      $.post("controllers/banner.php", {
         eliminar: idBanner
       }, function(result) {
         if (!result) {
@@ -144,30 +144,23 @@ if (!$_SESSION['user']) {
 
   $(document).on("click", "#guardarBanner", function() {
     var fd = new FormData();
-    var file1 = $('#img1')[0].files[0];
-    var file2 = $('#img2')[0].files[0];
+    var file1 = $('#img')[0].files[0];
     let id = $("#bannerId").val() ?? null;
     let titulo = $("#titulo").val();
     let descripcion = $("#descripcion").val();
 
-    if (!titulo || !descripcion) {
+    if (!titulo || !descripcion || !file1) {
       alert("Complete todos los campos...");
       return;
     }
 
-    if (!id && !file1 && !file2) {
-      alert("Complete todos los campos...");
-      return;
-    }
-
-    fd.append('img1', file1);
-    fd.append('img2', file2);
+    fd.append('img', file1);
     fd.append('bannerId', id);
     fd.append('titulo', titulo);
     fd.append('descripcion', descripcion);
 
     $.ajax({
-      url: 'controllers/bannerProductos.php',
+      url: 'controllers/banner.php',
       type: 'post',
       data: fd,
       contentType: false,

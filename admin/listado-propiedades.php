@@ -61,7 +61,7 @@ $propiedades = $propiedadesModel->getPropiedades(true);
           <th class="text-center">Acciones</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="text-center">
         <?php /* foreach ($propiedades as $propiedad) :
           echo '<tr>
                   <td class="text-center">' . $propiedad['codigo'] . '</th>
@@ -95,7 +95,7 @@ $propiedades = $propiedadesModel->getPropiedades(true);
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-<script src="../assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/2.0.6/js/dataTables.js"></script>
 <script src="https://cdn.datatables.net/2.0.6/js/dataTables.bootstrap5.js"></script>

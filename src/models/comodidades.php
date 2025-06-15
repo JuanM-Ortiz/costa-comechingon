@@ -30,7 +30,7 @@ class Comodidades
 
   public function getComodidadesByPropiedadId($id)
   {
-    $query = "SELECT c.descripcion 
+    $query = "SELECT c.descripcion, c.fa_icon
     FROM comodidades c
     JOIN propiedades_comodidades pc ON c.id = pc.id_comodidad
     WHERE pc.id_propiedad = $id";
@@ -65,9 +65,9 @@ class Comodidades
     return true;
   }
 
-  public function editar($idComodidad, $descripcion)
+  public function editar($idComodidad, $descripcion, $faIcon = null)
   {
-    $query = "UPDATE comodidades SET descripcion = '{$descripcion}'";
+    $query = "UPDATE comodidades SET descripcion = '{$descripcion}', fa_icon = '{$faIcon}'";
 
     $query .= " WHERE id = $idComodidad";
     $resultado = $this->conexion->prepare($query);
@@ -75,9 +75,9 @@ class Comodidades
     return true;
   }
 
-  public function crear($descripcion)
+  public function crear($descripcion, $faIcon = null)
   {
-    $query = "INSERT INTO comodidades (descripcion) VALUES ('{$descripcion}')";
+    $query = "INSERT INTO comodidades (descripcion, fa_icon) VALUES ('{$descripcion}', '{$faIcon}')";
     $resultado = $this->conexion->prepare($query);
     $resultado->execute();
     return true;

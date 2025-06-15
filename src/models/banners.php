@@ -43,9 +43,9 @@ class Banners
     return true;
   }
 
-  public function editar($idBanner, $descripcion)
+  public function editar($idBanner, $titulo, $descripcion)
   {
-    $query = "UPDATE banners SET descripcion = '{$descripcion}'";
+    $query = "UPDATE banners SET titulo = '{$titulo}', descripcion = '{$descripcion}'";
 
     $query .= " WHERE id = $idBanner";
     $resultado = $this->conexion->prepare($query);
@@ -53,9 +53,9 @@ class Banners
     return true;
   }
 
-  public function crear($descripcion)
+  public function crear($titulo, $descripcion, $imagen)
   {
-    $query = "INSERT INTO banners (descripcion) VALUES ('{$descripcion}')";
+    $query = "INSERT INTO banners (titulo, descripcion, img) VALUES ('{$titulo}','{$descripcion}', '{$imagen}')";
     $resultado = $this->conexion->prepare($query);
     $resultado->execute();
     return true;

@@ -26,11 +26,10 @@ $servicios = $serviciosModel->getServicios(false);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Costa Comechingón - Admin</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <?php include_once 'modules/navbar.html'; ?>
@@ -42,6 +41,32 @@ $servicios = $serviciosModel->getServicios(false);
 
   .form-control {
     border: var(--bs-border-width) solid var(--bs-border-color) !important;
+  }
+
+  #icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 10px;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+
+  .icon-option {
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border 0.2s ease;
+  }
+
+  .icon-option:hover {
+    border-color: #888;
+  }
+
+  .icon-option.selected {
+    border-color: #007BFF;
+    background-color: #e6f0ff;
   }
 </style>
 
@@ -58,6 +83,7 @@ $servicios = $serviciosModel->getServicios(false);
         <tr>
           <th class="text-center">#</th>
           <th class="text-center">Descripción</th>
+          <th class="text-center">Icono</th>
           <th class="text-center">Acciones</th>
         </tr>
       </thead>
@@ -65,7 +91,8 @@ $servicios = $serviciosModel->getServicios(false);
         <?php foreach ($servicios as $servicio) :
           echo '<tr>
                   <td class="text-center">' . $servicio['id'] . '</th>
-                  <td class="text-center">' . $servicio['descripcion'] . '</th>';
+                  <td class="text-center">' . $servicio['descripcion'] . '</th>
+                  <td class="text-center"><i class="' . $servicio['fa_icon'] . '"></i></th>';
 
           if ($servicio['deleted_at'] == null) {
             echo '
@@ -94,7 +121,7 @@ $servicios = $serviciosModel->getServicios(false);
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="../assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
 
 <script>
   function borrarServicio(idServicio) {
@@ -138,6 +165,7 @@ $servicios = $serviciosModel->getServicios(false);
 
       let servicioId = $("#servicioId").val() ?? null;
       let descripcion = $("#descripcion").val();
+      let faIcon = $("#selected-icon").val();
 
       if (!descripcion) {
         alert("Complete todos los campos...");
@@ -145,6 +173,7 @@ $servicios = $serviciosModel->getServicios(false);
       }
       fd.append('servicioId', servicioId);
       fd.append('descripcion', descripcion);
+      fd.append('faIcon', faIcon);
 
       $.ajax({
         url: 'controllers/servicio.php',
@@ -170,8 +199,29 @@ $servicios = $serviciosModel->getServicios(false);
       let row = $(this).closest("tr");
       let servicioId = row.find("td:nth-child(1)").text().trim();
       let descripcion = row.find("td:nth-child(2)").text();
+      let icon = row.find("td:nth-child(3)").find("i").attr("class");
+      icon = icon.split(' ')[1];
       $("#servicioId").val(servicioId);
       $("#descripcion").val(descripcion.trim());
+      let iconOptions = document.querySelectorAll('.icon-option');
+      iconOptions.forEach(iconOption => {
+        if (iconOption.classList.contains(icon)) {
+          iconOption.click();
+        }
+      });
     })
+
+    const iconOptions = document.querySelectorAll('.icon-option');
+    const hiddenInput = document.getElementById('selected-icon');
+    const iconPreview = document.getElementById('icon-preview');
+
+    iconOptions.forEach(icon => {
+      icon.addEventListener('click', () => {
+        iconOptions.forEach(i => i.classList.remove('selected'));
+        icon.classList.add('selected');
+        hiddenInput.value = icon.className;
+        //iconPreview.innerHTML = `<i class="${icon.className}"></i>`;
+      });
+    });
   })
 </script>
