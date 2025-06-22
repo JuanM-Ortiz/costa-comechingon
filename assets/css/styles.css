@@ -200,79 +200,84 @@ body {
   margin-top: 1rem;
 }
 
+.icon-card p {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
 .footer-contacto {
-  background-color: #f3f0eb;
-  padding: 2rem;
-  gap: 2rem;
-  align-items: flex-start;
+  background-color: #244210;
+  color: white;
+  padding: 3rem 0;
 }
 
 .info-contacto,
-.logo-footer,
-.menu-footer {
-  flex: 1 1 250px;
-  margin: 1rem;
+.redes {
+  margin-bottom: 2rem;
 }
 
 .redes img {
-  width: 24px;
-  margin-right: 0.5rem;
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
 }
 
 .menu-footer li {
   list-style: none;
   margin-bottom: 0.5rem;
-  text-align: left;
 }
 
 .menu-footer a {
-  color: #444;
+  color: white;
   text-decoration: none;
 }
 
 .historia-fondo {
-  background-image: url('../img/banner2.png');
+  background-image: url('../img/main.jpg');
   background-size: cover;
-  background-position: top;
-  padding: 5rem 1rem;
-  color: white;
-  min-height: 850px;
-  
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 60vh;
+  display: flex;
 }
 
 .historia-overlay {
-  padding: 3rem 2rem;
-  border-radius: 10px;
-  max-width: 1200px;
-  margin: auto;
+  background: rgba(36, 66, 16, 0.9);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  width: 100%;
 }
 
 .historia-overlay h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 .historia-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .valores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin-top: 3rem;
 }
 
 .footer-contacto .redes i {
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  margin: 0 0.5rem;
+  font-size: 2rem;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
 }
 
 .footer-contacto .redes i:hover {
-  opacity: 1;
+  transform: scale(1.2);
 }
 
 .nav-link {
@@ -281,104 +286,123 @@ body {
 }
 
 .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
-  left: 0;
-  bottom: 0;
+  width: 0;
   height: 2px;
-  width: 0%;
+  bottom: 0px;
+  left: 50%;
   background-color: #1A7041;
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .active-link::after {
-  width: 100%;
+  width: 70%;
 }
 
 .navbar {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
 .nav-link:hover{
-  color:#244210 !important;
+  color: #244210 !important;
 }
 
 .equipo {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
   text-align: center;
-  padding: 100px 20px;
-  background-color: #fdfdfd;
 }
 
 .equipo h2 {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .equipo p {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  color: #555;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .equipo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card-profesional {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  padding: 20px;
-  max-width: 300px;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
   text-align: center;
 }
 
+.card-profesional:hover {
+  transform: translateY(-5px);
+}
+
 .card-profesional .foto {
-  width: 100px;
-  height: 100px;
-  background-color: #ddd;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  margin: 0 auto 15px;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+  border: 4px solid #244210;
+}
+
+.card-profesional .foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-profesional h3 {
-  margin: 0;
-  font-size: 1.2rem;
+  color: #244210;
+  margin-bottom: 0.5rem;
 }
 
 .card-profesional .cargo {
-  font-weight: bold;
-  color: #666;
-  margin: 5px 0 10px;
+  color: #1A7041;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .card-profesional .info-extra {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 1rem;
+  margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: #888;
-  margin-bottom: 10px;
+  color: #666;
 }
 
 .card-profesional .area {
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-weight: 600;
+  color: #244210;
+  margin-bottom: 0.5rem;
 }
 
 .card-profesional .especialidad {
+  color: #666;
   font-size: 0.9rem;
-  color: #555;
+  line-height: 1.5;
 }
 
 .foto {
   width: 120px;
   height: 120px;
-  margin: 0 auto 10px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #ddd;
+  margin: 0 auto 1.5rem;
+  border: 4px solid #244210;
 }
 
 .foto img {
@@ -391,63 +415,628 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 280px;
-  background-color: #f8f9fa;
-  border: 1px solid #19875433;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1050;
-
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 1000;
+  max-width: 300px;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
 }
 
 .whatsapp-floating {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  border-radius: 12px;
-  z-index: 1050;
-
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 1000;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
 }
 
 .whatsapp-floating.show {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .whatsapp-floating-box.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 576px) {
-  .whatsapp-floating-box {
-    width: 90%;
-    right: 5%;
-    bottom: 15px;
-  }
+  transform: translateX(0);
 }
 
 .ratio iframe {
-  height: 500px !important;
+  border-radius: 10px;
 }
 
 .footer-links {
+  color: #244210;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-links:hover{
-  color:#1A7041!important;
+  color: #1A7041;
 }
 
 .footer-icon:hover{
-  color:#244210!important;
+  transform: scale(1.1);
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVE DESIGN ===== */
+
+/* Tablets y dispositivos medianos */
+@media (max-width: 768px) {
+  .section-bajo-navbar {
+    padding-top: 80px;
+  }
+  
+  .hero {
+    height: 70vh;
+  }
+  
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .display-5 {
+    font-size: 2rem;
+  }
+  
+  .lead {
+    font-size: 1.1rem;
+  }
+  
+  .navbar-brand img {
+    height: 50px;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1rem !important;
+    padding: 0.5rem 1rem;
+  }
+  
+  .property-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .property-image {
+    height: 180px;
+  }
+  
+  .icon-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .contenedor-iconos {
+    gap: 1.5rem;
+  }
+  
+  .valores {
+    padding: 2rem 1rem;
+  }
+  
+  .equipo {
+    padding: 3rem 1rem;
+  }
+  
+  .equipo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .card-profesional {
+    padding: 1.5rem;
+  }
+  
+  .card-profesional .foto {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .historia-overlay {
+    padding: 3rem 1rem;
+  }
+  
+  .historia-overlay h2 {
+    font-size: 2rem;
+  }
+  
+  .historia-overlay p {
+    font-size: 1rem;
+  }
+  
+  .footer-contacto {
+    padding: 2rem 0;
+  }
+  
+  .whatsapp-floating-box {
+    bottom: 15px;
+    right: 15px;
+    max-width: 280px;
+    padding: 1rem;
+  }
+  
+  .whatsapp-floating {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .whatsapp-floating i {
+    font-size: 4rem !important;
+  }
+  
+  /* Ajustes específicos para página de detalle de propiedades */
+  #carouselPropiedad .carousel-item {
+    height: 300px !important;
+  }
+  
+  .thumbnail-selector {
+    width: 80px !important;
+    height: 60px !important;
+  }
+  
+  .ratio-16x9 {
+    height: 200px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+  .section-bajo-navbar {
+    padding-top: 70px;
+  }
+  
+  .hero {
+    height: 60vh;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .display-5 {
+    font-size: 1.75rem;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand img {
+    height: 45px;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 0.95rem !important;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+  
+  .active-link::after {
+    width: 30%;
+  }
+  
+  .navbar-collapse {
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+  
+  .property-card {
+    margin-bottom: 1rem;
+  }
+  
+  .property-image {
+    height: 160px;
+  }
+  
+  .icon-card {
+    padding: 1rem;
+  }
+  
+  .icon-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .valores {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .contenedor-iconos {
+    gap: 1rem;
+  }
+  
+  .equipo {
+    padding: 2rem 0.5rem;
+  }
+  
+  .equipo h2 {
+    font-size: 1.75rem;
+  }
+  
+  .equipo p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .equipo-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .card-profesional {
+    padding: 1.25rem;
+  }
+  
+  .card-profesional .foto {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  .card-profesional h3 {
+    font-size: 1.1rem;
+  }
+  
+  .card-profesional .cargo {
+    font-size: 0.9rem;
+  }
+  
+  .card-profesional .info-extra {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .historia-overlay {
+    padding: 2rem 1rem;
+  }
+  
+  .historia-overlay h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .historia-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .footer-contacto {
+    padding: 1.5rem 0;
+  }
+  
+  .footer-contacto .redes i {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+  }
+  
+  .whatsapp-floating-box {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    padding: 0.75rem;
+  }
+  
+  .whatsapp-floating {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .whatsapp-floating i {
+    font-size: 3.5rem !important;
+  }
+  
+  /* Ajustes específicos para formularios */
+  .form-control {
+    font-size: 16px; /* Evita zoom en iOS */
+  }
+  
+  /* Ajustes para carruseles */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Ajustes para mapas */
+  .ratio-16x9 {
+    height: 250px;
+  }
+  
+  /* Ajustes para botones */
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Ajustes para textos */
+  h1, .h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3, .h3 {
+    font-size: 1.25rem;
+  }
+  
+  h4, .h4 {
+    font-size: 1.1rem;
+  }
+  
+  h5, .h5 {
+    font-size: 1rem;
+  }
+  
+  /* Ajustes para contenedores */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ajustes para espaciado */
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .pt-5 {
+    padding-top: 2rem !important;
+  }
+  
+  .pb-5 {
+    padding-bottom: 2rem !important;
+  }
+  
+  .my-5 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .mt-5 {
+    margin-top: 2rem !important;
+  }
+  
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Ajustes específicos para página de detalle de propiedades */
+  #carouselPropiedad .carousel-item {
+    height: 250px !important;
+  }
+  
+  .thumbnail-selector {
+    width: 70px !important;
+    height: 50px !important;
+  }
+  
+  .ratio-16x9 {
+    height: 200px;
+  }
+  
+  /* Ajustes para filtros de propiedades */
+  .form-select {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-select.w-auto {
+    width: 100% !important;
+  }
+  
+  /* Ajustes para valores grid */
+  .valores-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .valores-grid .property-card {
+    margin: 0;
+  }
+  
+  .valores-grid .property-card i {
+    font-size: 2rem !important;
+  }
+  
+  .valores-grid .property-card h4 {
+    font-size: 1.1rem;
+  }
+  
+  .valores-grid .property-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 375px) {
+  .hero {
+    height: 50vh;
+  }
+  
+  .display-4 {
+    font-size: 1.75rem;
+  }
+  
+  .display-5 {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+  }
+  
+  .property-image {
+    height: 140px;
+  }
+  
+  .card-profesional .foto {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .whatsapp-floating i {
+    font-size: 3rem !important;
+  }
+  
+  .whatsapp-floating-box {
+    padding: 0.5rem;
+  }
+  
+  .whatsapp-floating-box p {
+    font-size: 0.85rem;
+  }
+  
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Ajustes específicos para página de detalle de propiedades */
+  #carouselPropiedad .carousel-item {
+    height: 200px !important;
+  }
+  
+  .thumbnail-selector {
+    width: 60px !important;
+    height: 40px !important;
+  }
+  
+  .ratio-16x9 {
+    height: 180px;
+  }
+  
+  .valores-grid .property-card i {
+    font-size: 1.5rem !important;
+  }
+  
+  .valores-grid .property-card h4 {
+    font-size: 1rem;
+  }
+  
+  .valores-grid .property-card p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Orientación landscape en móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    height: 100vh;
+  }
+  
+  .section-bajo-navbar {
+    padding-top: 60px;
+  }
+  
+  .navbar {
+    padding: 0.25rem 1rem;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+  }
+  
+  /* Ajustes específicos para página de detalle de propiedades */
+  #carouselPropiedad .carousel-item {
+    height: 60vh !important;
+  }
+}
+
+/* Ajustes para tablets en modo portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .hero {
+    height: 80vh;
+  }
+  
+  .equipo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contenedor-iconos {
+    gap: 1.5rem;
+  }
+  
+  .icon-card {
+    width: 200px;
+  }
+  
+  /* Ajustes específicos para página de detalle de propiedades */
+  #carouselPropiedad .carousel-item {
+    height: 400px !important;
+  }
+  
+  .valores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .equipo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .contenedor-iconos {
+    gap: 3rem;
+  }
+  
+  .icon-card {
+    width: 280px;
+  }
+  
+  /* Ajustes específicos para página de detalle de propiedades */
+  #carouselPropiedad .carousel-item {
+    height: 500px !important;
+  }
+  
+  .valores-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ajustes para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Ajustes para modo oscuro del sistema */
+@media (prefers-color-scheme: dark) {
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+  
+  .text-muted {
+    color: #6c757d !important;
+  }
 }
 
 
