@@ -1,26 +1,25 @@
 <div class="container py-5">
   <div class="row g-4">
+    <?php foreach ($propiedadesDestacadas as $propiedad): ?>
 
-    <!-- Tarjeta 1 -->
-
-    <div class="col-lg-4 col-md-6 col-12">
-      <a href="/propiedadDetalle.php" class="property-card text-decoration-none text-dark d-block">
-        <span class="badge bg-danger badge-custom">VENTA</span>
-        <img src="assets/img/casa3.jpg" class="property-image" alt="Imagen propiedad">
-        <div class="p-3">
-          <h5>Costa del Molino</h5>
-          <p class="mb-1">Contado</p>
-          <p class="text-muted small">
-            <i class="fas fa-map-marker-alt me-1 iconos"></i> Rincón del Este, Merlo, San Luis
-          </p>
-          <div class="d-flex justify-content-between small">
-            <span class="text-dark"><i class="fas fa-ruler-combined me-1 iconos"></i> 90 m²</span>
-            <span><strong>u$s 110.000</strong></span>
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="/propiedadDetalle.php" class="property-card text-decoration-none text-dark d-block">
+          <span class="badge bg-danger badge-custom"><?= strtoupper($propiedad['tipo_publicacion']) ?></span>
+          <img src="assets/img/propiedades/<?= $propiedad['imagen_portada'] ?>" class="property-image" alt="Imagen propiedad">
+          <div class="p-3">
+            <h5><?= $propiedad['titulo'] ?></h5>
+            <p class="mb-1"><?= $propiedad['tipo_propiedad'] ?></p>
+            <p class="text-muted small">
+              <i class="fas fa-map-marker-alt me-1 iconos"></i> <?= ucfirst($propiedad['zona']) . ', ' . ucfirst($propiedad['localidad']) ?>
+            </p>
+            <div class="d-flex justify-content-between small">
+              <span class="text-dark"><i class="fas fa-ruler-combined me-1 iconos"></i> <?= $propiedad['superficie_cubierta'] ?> m²</span>
+              <span><strong><?= $propiedad['moneda'] == 1 ? '$' : 'u$s' ?> <?= number_format($propiedad['precio'], 2, ',', '.') ?> </strong></span>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
-
+        </a>
+      </div>
+    <?php endforeach; ?>
 
     <!-- Tarjeta 2 -->
     <div class="col-lg-4 col-md-6 col-12">

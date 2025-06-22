@@ -1,9 +1,12 @@
 <?php
 include_once 'src/db/conn.php';
 include_once 'src/models/banners.php';
+include_once 'src/models/propiedades.php';
 $conexion = Conexion::conectar();
 $bannersModel = new Banners($conexion);
+$propiedadesModel = new Propiedades($conexion);
 $banners = $bannersModel->getBanners(true);
+$propiedadesDestacadas = $propiedadesModel->getPropiedadesConPrecio(null, null, true);
 $conexion = null;
 
 ?>
@@ -65,7 +68,7 @@ $conexion = null;
   </section>
 
   <h2 class="text-center pt-5 mb-4 text-verde-oscuro">Propiedades Destacadas</h2>
-  <?php include_once 'modules/propiedadesMuestrario.html'; ?>
+  <?php include_once 'modules/propiedadesMuestrario.php'; ?>
 
   <?php include_once 'modules/nuestraHistoria.html'; ?>
 

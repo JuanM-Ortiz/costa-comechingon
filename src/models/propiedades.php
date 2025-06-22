@@ -104,7 +104,7 @@ class Propiedades
   public function crear($params)
   {
     try {
-      $codigo = 'AYF' . random_int(1, 99999);
+      $codigo = 'CCH' . random_int(1, 99999);
       $query = "INSERT INTO propiedades (titulo, id_tipo_propiedad, 
       descripcion, superficie_cubierta, superficie,
       pisos, dormitorios, 
@@ -185,13 +185,22 @@ class Propiedades
     return true;
   }
 
-  public function getPropiedadesConPrecio($inicio = null, $resultadosPorPagina = null)
+  public function getPropiedadesConPrecio($inicio = null, $resultadosPorPagina = null, $destacadas = false)
   {
-    $query = "SELECT p.*, pt.precio, pt.moneda, tp.descripcion AS 'tipo_publicacion'
+    $query = "SELECT p.*, pt.precio, pt.moneda, tp.descripcion AS 'tipo_publicacion',
+              l.descripcion AS 'localidad', z.descripcion AS 'zona', tpr.descripcion AS 'tipo_propiedad'
               FROM propiedades p
               JOIN propiedades_tipo_publicaciones pt ON p.id = pt.id_propiedad
               JOIN tipo_publicaciones tp ON pt.id_tipo_publicacion = tp.id
+              JOIN localidades l ON p.id_localidad = l.id
+              JOIN zonas z ON p.id_zona = z.id
+              JOIN tipos_propiedad tpr ON p.id_tipo_propiedad = tpr.id
               WHERE p.deleted_at IS NULL";
+
+    if ($destacadas) {
+      $query .= " AND p.es_destacada = 1";
+    }
+
     if ($inicio || $resultadosPorPagina) {
       $query .= " LIMIT $inicio, $resultadosPorPagina";
     }

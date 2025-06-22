@@ -23,7 +23,7 @@
         </div>
     </section>
 
-    <?php include_once 'modules/propiedadesMuestrario.html'; ?>
+    <?php include_once 'modules/propiedadesMuestrario.php'; ?>
 
     <?php include_once 'modules/footer.html'; ?>
 
