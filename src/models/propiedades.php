@@ -221,9 +221,10 @@ class Propiedades
 
   public function getImagenesByPropiedadId($idPropiedad)
   {
-    $query = "SELECT imagen
+    $query = "SELECT imagen, es_principal
     FROM propiedades_imagenes
-    WHERE id_propiedad = $idPropiedad";
+    WHERE id_propiedad = $idPropiedad
+    ORDER BY es_principal DESC";
     $resultado = $this->conexion->prepare($query);
     $resultado->execute();
     return $resultado->fetchAll(PDO::FETCH_ASSOC);
