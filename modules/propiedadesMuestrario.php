@@ -3,7 +3,7 @@
     <?php foreach ($propiedadesDestacadas as $propiedad): ?>
 
       <div class="col-lg-4 col-md-6 col-12">
-        <a href="/propiedadDetalle.php" class="property-card text-decoration-none text-dark d-block">
+        <a href="/propiedadDetalle.php?id=<?= $propiedad['id'] ?>" class="property-card text-decoration-none text-dark d-block">
           <span class="badge bg-danger badge-custom"><?= strtoupper($propiedad['tipo_publicacion']) ?></span>
           <img src="assets/img/propiedades/<?= $propiedad['imagen_portada'] ?>" class="property-image" alt="Imagen propiedad">
           <div class="p-3">
@@ -21,131 +21,66 @@
       </div>
     <?php endforeach; ?>
 
-    <!-- Tarjeta 2 -->
-    <div class="col-lg-4 col-md-6 col-12">
-      <a href="/propiedadDetalle.php" class="property-card text-decoration-none text-dark d-block">
-        <span class="badge bg-danger badge-custom">VENTA</span>
-        <img src="assets/img/casa2.jpg" class="property-image" alt="Imagen propiedad">
-        <div class="p-3">
-          <h5>Costa del Molino</h5>
-          <p class="mb-1">Contado</p>
-          <p class="text-muted small">
-            <i class="fas fa-map-marker-alt me-1 iconos"></i> Rincón del Este, Merlo, San Luis
-          </p>
-          <div class="d-flex justify-content-between small">
-            <span><i class="fas fa-ruler-combined me-1 iconos"></i> 90 m²</span>
-            <span><strong>u$s 110.000</strong></span>
+    <?php foreach ($propiedades as $propiedad): ?>
+
+      <div class="col-lg-4 col-md-6 col-12">
+        <a href="/propiedadDetalle.php?id=<?= $propiedad['id'] ?>" class="property-card text-decoration-none text-dark d-block">
+          <span class="badge bg-danger badge-custom"><?= strtoupper($propiedad['tipo_publicacion']) ?></span>
+          <img src="assets/img/propiedades/<?= $propiedad['imagen_portada'] ?>" class="property-image" alt="Imagen propiedad">
+          <div class="p-3">
+            <h5><?= $propiedad['titulo'] ?></h5>
+            <p class="mb-1"><?= $propiedad['tipo_propiedad'] ?></p>
+            <p class="text-muted small">
+              <i class="fas fa-map-marker-alt me-1 iconos"></i> <?= ucfirst($propiedad['zona']) . ', ' . ucfirst($propiedad['localidad']) ?>
+            </p>
+            <div class="d-flex justify-content-between small">
+              <span class="text-dark"><i class="fas fa-ruler-combined me-1 iconos"></i> <?= $propiedad['superficie_cubierta'] ?> m²</span>
+              <span><strong><?= $propiedad['moneda'] == 1 ? '$' : 'u$s' ?> <?= number_format($propiedad['precio'], 2, ',', '.') ?> </strong></span>
+            </div>
           </div>
-        </div>
-      </a>
-    </div>
+        </a>
+      </div>
+    <?php endforeach; ?>
 
-
-    <!-- Tarjeta 3 -->
-    <div class="col-lg-4 col-md-6 col-12">
-      <a href="/propiedadDetalle.php" class="property-card text-decoration-none text-dark d-block">
-        <span class="badge bg-danger badge-custom">VENTA</span>
-        <img src="assets/img/casa1.jpg" class="property-image" alt="Imagen propiedad">
-        <div class="p-3">
-          <h5>Costa del Molino</h5>
-          <p class="mb-1">Contado</p>
-          <p class="text-muted small">
-            <i class="fas fa-map-marker-alt me-1 iconos"></i> Rincón del Este, Merlo, San Luis
-          </p>
-          <div class="d-flex justify-content-between small">
-            <span><i class="fas fa-ruler-combined me-1 iconos"></i> 90 m²</span>
-            <span><strong>u$s 110.000</strong></span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-
-    <!-- Tarjeta 4 -->
-    <div class="col-lg-4 col-md-6 col-12">
-      <a href="/propiedadDetalle.php" class="property-card text-decoration-none text-dark d-block">
-        <span class="badge bg-danger badge-custom">VENTA</span>
-        <img src="assets/img/casa3.jpg" class="property-image" alt="Imagen propiedad">
-        <div class="p-3">
-          <h5>Costa del Molino</h5>
-          <p class="mb-1">Contado</p>
-          <p class="text-muted small">
-            <i class="fas fa-map-marker-alt me-1 iconos"></i> Rincón del Este, Merlo, San Luis
-          </p>
-          <div class="d-flex justify-content-between small">
-            <span><i class="fas fa-ruler-combined me-1 iconos"></i> 90 m²</span>
-            <span><strong>u$s 110.000</strong></span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-
-    <!-- Tarjeta 5 -->
-    <div class="col-lg-4 col-md-6 col-12">
-      <a href="/propiedadDetalle.php" class="property-card text-decoration-none text-dark d-block">
-        <span class="badge bg-danger badge-custom">VENTA</span>
-        <img src="assets/img/casa2.jpg" class="property-image" alt="Imagen propiedad">
-        <div class="p-3">
-          <h5>Costa del Molino</h5>
-          <p class="mb-1">Contado</p>
-          <p class="text-muted small">
-            <i class="fas fa-map-marker-alt me-1 iconos"></i> Rincón del Este, Merlo, San Luis
-          </p>
-          <div class="d-flex justify-content-between small">
-            <span><i class="fas fa-ruler-combined me-1 iconos"></i> 90 m²</span>
-            <span><strong>u$s 110.000</strong></span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-
-    <!-- Tarjeta 6 -->
-    <div class="col-lg-4 col-md-6 col-12">
-      <a href="/propiedadDetalle.php" class="property-card text-decoration-none text-dark d-block">
-        <span class="badge bg-danger badge-custom">VENTA</span>
-        <img src="assets/img/casa1.jpg" class="property-image" alt="Imagen propiedad">
-        <div class="p-3">
-          <h5>Costa del Molino</h5>
-          <p class="mb-1">Contado</p>
-          <p class="text-muted small">
-            <i class="fas fa-map-marker-alt me-1 iconos"></i> Rincón del Este, Merlo, San Luis
-          </p>
-          <div class="d-flex justify-content-between small">
-            <span><i class="fas fa-ruler-combined me-1 iconos"></i> 90 m²</span>
-            <span><strong>u$s 110.000</strong></span>
-          </div>
-        </div>
-      </a>
-    </div>
-
+    <?php if (empty($propiedades) && empty($propiedadesDestacadas)): ?>
+      <div class="col-12">
+        <h4 class="text-center">No se encontraron resultados</h4>
+      </div>
+    <?php endif; ?>
 
 
 
   </div>
 </div>
-<div class="text-center mt-4">
-  <a href="#" class="btn btn-verde px-4 py-2 mt-3 shadow fw-bold rounded-pill">
-    Ver Lotes Disponibles
-  </a>
-</div>
+<?php if (!empty($propiedades)) : ?>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <?php if ($totalPaginas > 1) {
+        for ($i = 1; $i <= $totalPaginas; $i++) {
+          echo '<li class="page-item"><a class="page-link bg-dark text-white" href="propiedades.php?pagina=' . $i . '&tipo_propiedad=' . $_GET['tipo_propiedad'] . '&localidad=' . $_GET['localidad']  . '">' . $i . '</a></li>';
+        }
+      } ?>
+    </ul>
+  </nav>
+<?php endif; ?>
 
 
 <!-- Filtros -->
 <div class="mt-5 p-4 bg-danger text-white text-center">
   <h5>Encontrá tu próxima inversión</h5>
-  <form class="d-flex justify-content-center gap-2 mt-3 flex-wrap">
-    <select class="form-select w-auto">
-      <option selected>Tipo de Inmueble</option>
-      <option>Casa</option>
-      <option>Departamento</option>
-      <option>Cabaña</option>
+  <form class="d-flex justify-content-center gap-2 mt-3 flex-wrap" action="propiedades.php" method="get">
+    <select class="form-select w-auto" name="tipo_propiedad">
+      <option selected disabled>Seleccione un tipo de propiedad...</option>
+      <?php foreach ($tiposPropiedad as $tipo): ?>
+        <option value="<?= $tipo['id'] ?>"><?= $tipo['descripcion'] ?></option>
+      <?php endforeach; ?>
     </select>
-    <select class="form-select w-auto">
-      <option selected>Localidad</option>
-      <option>Merlo</option>
-      <option>Rincón del Este</option>
+    <select class="form-select w-auto" name="localidad">
+      <option selected disabled>Seleccione una localidad...</option>
+      <?php foreach ($localidades as $localidad): ?>
+        <option value="<?= $localidad['id'] ?>"><?= $localidad['descripcion'] ?></option>
+      <?php endforeach; ?>
     </select>
     <button type="submit" class="btn btn-marron">Buscar</button>
   </form>

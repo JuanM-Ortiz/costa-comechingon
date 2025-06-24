@@ -1,3 +1,30 @@
+<?php
+include_once 'src/db/conn.php';
+include_once 'src/models/propiedades.php';
+include_once 'src/models/localidades.php';
+include_once 'src/models/tiposPropiedad.php';
+$conexion = Conexion::conectar();
+$propiedadesModel = new Propiedades($conexion);
+$localidadesModel = new Localidades($conexion);
+$tiposPropiedadModel = new TiposPropiedad($conexion);
+$localidades = $localidadesModel->getLocalidades();
+$tiposPropiedad = $tiposPropiedadModel->getTiposPropiedad();
+$paginaActual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+$resultadosPorPagina = 9;
+$inicio = ($paginaActual - 1) * $resultadosPorPagina;
+if ($_GET['tipo_propiedad'] || $_GET['localidad']) {
+    $propiedades = $propiedadesModel->getPropiedadesFiltered($_GET['localidad'], null, $_GET['tipo_propiedad'], $inicio, $resultadosPorPagina);
+} else {
+    $propiedades = $propiedadesModel->getPropiedadesConPrecio($inicio, $resultadosPorPagina);
+}
+if ($_GET['codigo']) {
+    $propiedad = $propiedadesModel->getPropiedadByCodigo($_GET['codigo']);
+    header("Location: propiedadDetalle.php?id=" . $propiedad[0]['id']);
+}
+
+$totalRegistros =  $propiedadesModel->getCantidadPropiedades();
+$totalPaginas = ceil($totalRegistros / $resultadosPorPagina);
+?>
 <!DOCTYPE html>
 <html lang="en">
 

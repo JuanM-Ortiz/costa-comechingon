@@ -2,12 +2,19 @@
 include_once 'src/db/conn.php';
 include_once 'src/models/banners.php';
 include_once 'src/models/propiedades.php';
+include_once 'src/models/localidades.php';
+include_once 'src/models/tiposPropiedad.php';
 $conexion = Conexion::conectar();
 $bannersModel = new Banners($conexion);
 $propiedadesModel = new Propiedades($conexion);
 $banners = $bannersModel->getBanners(true);
 $propiedadesDestacadas = $propiedadesModel->getPropiedadesConPrecio(null, null, true);
+$localidadesModel = new Localidades($conexion);
+$tiposPropiedadModel = new TiposPropiedad($conexion);
+$localidades = $localidadesModel->getLocalidades();
+$tiposPropiedad = $tiposPropiedadModel->getTiposPropiedad();
 $conexion = null;
+
 
 ?>
 <!DOCTYPE html>

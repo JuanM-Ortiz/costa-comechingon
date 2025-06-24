@@ -201,9 +201,11 @@ class Propiedades
       $query .= " AND p.es_destacada = 1";
     }
 
+    $query .= " ORDER BY p.id DESC";
     if ($inicio || $resultadosPorPagina) {
       $query .= " LIMIT $inicio, $resultadosPorPagina";
     }
+
     $resultado = $this->conexion->prepare($query);
     $resultado->execute();
     return $resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -227,25 +229,12 @@ class Propiedades
     return $resultado->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function getPropiedadesFiltered($zona = null, $localidad = null, $tipoPublicacion = null, $tipoPropiedad = null, $inicio, $resultadosPorPagina)
+  public function getPropiedadesFiltered($localidad = null, $tipoPublicacion = null, $tipoPropiedad = null, $inicio, $resultadosPorPagina)
   {
     $and = '';
-    if ($zona) {
-      $getZona = "SELECT id FROM zonas WHERE descripcion LIKE '%$zona%'";
-      $resultado = $this->conexion->prepare($getZona);
-      $resultado->execute();
-      $zonas = $resultado->fetchAll(PDO::FETCH_COLUMN);
-      if (!empty($zonas))
-        $and .= ' AND id_zona IN (' . implode(',', $zonas) . ')';
-    }
 
     if ($localidad) {
-      $getZona = "SELECT id FROM localidades WHERE descripcion LIKE '%$localidad%'";
-      $resultado = $this->conexion->prepare($getZona);
-      $resultado->execute();
-      $localidades = $resultado->fetchAll(PDO::FETCH_COLUMN);
-      if (!empty($localidades))
-        $and .= ' AND id_localidad IN (' . implode(',', $localidades) . ')';
+      $and .= " AND l.id = {$localidad}";
     }
 
     if ($tipoPublicacion) {
@@ -256,10 +245,14 @@ class Propiedades
       $and .= " AND p.id_tipo_propiedad = {$tipoPropiedad}";
     }
 
-    $query = "SELECT p.*, pt.precio, pt.moneda, tp.descripcion AS 'tipo_publicacion'
+    $query = "SELECT p.*, pt.precio, pt.moneda, tp.descripcion AS 'tipo_publicacion',
+    l.descripcion AS 'localidad', tpr.descripcion AS 'tipo_propiedad',z.descripcion AS 'zona'
     FROM propiedades p
     JOIN propiedades_tipo_publicaciones pt ON p.id = pt.id_propiedad
     JOIN tipo_publicaciones tp ON pt.id_tipo_publicacion = tp.id
+    JOIN localidades l ON p.id_localidad = l.id
+    JOIN tipos_propiedad tpr ON p.id_tipo_propiedad = tpr.id
+    JOIN zonas z ON p.id_zona = z.id
     WHERE p.deleted_at IS NULL";
     $query .= $and;
 
