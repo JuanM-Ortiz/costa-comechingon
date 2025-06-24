@@ -100,7 +100,7 @@
 
                 <!-- Mapa -->
                 <div class="mt-5">
-                    <h4 class="fw-bold mb-3 text-center text-verde-oscuro">Nuestra Ubicación</h4>
+                    <h4 class="fw-bold mb-3 text-center text-verde-oscuro">Ubicación</h4>
                     <div class="ratio ratio-16x9">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d708.4270719360266!2d-65.01625867945259!3d-32.36913851087354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2e3eefc633565%3A0xb1ecbc477aea83d2!2sCOSTA%20COMECHING%C3%93N!5e0!3m2!1ses-419!2sar!4v1749139440808!5m2!1ses-419!2sar" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
