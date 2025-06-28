@@ -163,10 +163,10 @@ if (!empty($_GET['id'])) {
                 <label for="mapsUrl" class="form-label">URL Google Maps</label>
                 <input type="text" class="form-control" id="mapsUrl" value='<?= $dataPropiedad[0]['maps_url']; ?>' />
               </div>
-              <div class="mb-3 col-4">
+              <!-- <div class="mb-3 col-4"> 
                 <label for="video" class="form-label">Video</label>
                 <input type="text" class="form-control" id="video" value='<?= $dataPropiedad[0]['video'];; ?>' />
-              </div>
+              </div> -->
               <div class="mb-3 col-4">
                 <label for="tipoPublicacion" class="form-label d-block">Tipo de publicación</label>
                 <div class="form-check form-check-inline mt-1">

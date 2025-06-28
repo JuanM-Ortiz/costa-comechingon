@@ -56,21 +56,21 @@ $index = 0;
             <!-- Imagen principal y miniaturas -->
             <div class="col-lg-8">
                 <!-- Carrusel principal -->
-                <div id="carouselPropiedad" class="carousel slide mb-3 shadow rounded overflow-hidden" data-bs-ride="carousel" style="height: 450px;">
-                    <div class="carousel-inner h-100">
+                <div id="carouselPropiedad" class="carousel slide mb-3 shadow rounded overflow-hidden" data-bs-ride="carousel">
+                    <div class="carousel-inner">
                         <?php foreach ($imagenes as $imagen) : ?>
-                            <div class="carousel-item h-100 <?= $imagen['es_principal'] == 1 ? 'active' : '' ?>">
-                                <img src="assets/img/propiedades/<?= $imagen['imagen'] ?>" class="d-block w-100 h-100 object-fit-cover" alt="Foto propiedad">
+                            <div class="carousel-item <?= $imagen['es_principal'] == 1 ? 'active' : '' ?>">
+                                <img src="assets/img/propiedades/<?= $_GET['id'] ?>/<?= $imagen['imagen'] ?>" class="d-block w-100" alt="Foto propiedad">
                             </div>
                         <?php endforeach; ?>
                     </div>
 
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselPropiedad" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Anterior</span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#carouselPropiedad" data-bs-slide="next">
-                        <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Siguiente</span>
                     </button>
                 </div>
@@ -78,7 +78,7 @@ $index = 0;
                 <!-- Miniaturas -->
                 <div class="d-flex justify-content-center gap-2">
                     <?php foreach ($imagenes as $imagen) : ?>
-                        <img src="assets/img/propiedades/<?= $imagen['imagen'] ?>" class="img-thumbnail thumbnail-selector" data-bs-target="#carouselPropiedad" data-bs-slide-to="<?= $index ?>" style="width: 100px; height: 70px; object-fit: cover; cursor: pointer;">
+                        <img src="assets/img/propiedades/<?= $_GET['id'] ?>/<?= $imagen['imagen'] ?>" class="img-thumbnail thumbnail-selector" data-bs-target="#carouselPropiedad" data-bs-slide-to="<?= $index ?>" style="width: 100px; height: 70px; object-fit: cover; cursor: pointer;">
                         <?php $index++; ?>
                     <?php endforeach; ?>
 
@@ -108,16 +108,17 @@ $index = 0;
 
                 <!-- Servicios -->
                 <h5 class="fw-bold mt-4 text-verde-oscuro">Servicios</h5>
-                <div class="d-flex gap-4 mt-2">
+                <div class="servicios-comodidades mt-2">
                     <?php foreach ($servicios as $servicio) : ?>
-                        <span><i class="<?= $servicio['fa_icon']; ?> text-verde-oscuro me-1"></i> <?= $servicio['descripcion'] ?></span>
+                        <span><i class="<?= $servicio['fa_icon']; ?>"></i> <?= $servicio['descripcion'] ?></span>
                     <?php endforeach; ?>
                 </div>
+
                 <!-- Comodidades -->
                 <h5 class="fw-bold mt-4 text-verde-oscuro">Comodidades</h5>
-                <div class="d-flex gap-4 mt-2">
+                <div class="servicios-comodidades mt-2">
                     <?php foreach ($comodidades as $comodidad) : ?>
-                        <span><i class="<?= $comodidad['fa_icon']; ?> text-verde-oscuro me-1"></i> <?= $comodidad['descripcion'] ?></span>
+                        <span><i class="<?= $comodidad['fa_icon']; ?>"></i> <?= $comodidad['descripcion'] ?></span>
                     <?php endforeach; ?>
                 </div>
 

@@ -93,65 +93,58 @@
             <!-- Card 1 -->
             <div class="card-profesional">
                 <div class="foto">
-                    <img src="assets/img/ema.png" alt="Carlos Mendoza">
+                    <img src="assets/img/equipo/1.png" alt="Cristina - Costa Comechingón">
                 </div>
-                <h3>Ing. Carlos Mendoza</h3>
-                <p class="cargo">Director General</p>
-                <div class="info-extra">
-                    <span>📎 CPIC N° 12.345</span>
-                    <span>🕒 15 años</span>
-                </div>
-                <p class="area">Desarrollo Inmobiliario</p>
+                <h3>Cristina</h3>
+                <p class="cargo text-success fw-bold">Fundadora & Directora</p>
+                <p class="area fw-bold">Gestión Inmobiliaria</p>
                 <p class="especialidad">
-                    Especialista en planificación urbana y desarrollo sustentable.
+                    Fundadora de Costa Comechingón, especialista en asesoramiento personalizado y desarrollo de proyectos inmobiliarios.
                 </p>
             </div>
 
+            <!-- Card 2 -->
             <div class="card-profesional">
                 <div class="foto">
-                    <img src="imagenes/maria.jpg" alt="María Elena Vásquez">
+                    <img src="assets/img/equipo/2.png" alt="Marcelo Alejandro Cimadamore">
                 </div>
-                <h3>Arq. María Elena Vásquez</h3>
-                <p class="cargo">Directora de Proyectos</p>
+                <h3>Marcelo Alejandro Cimadamore</h3>
+                <p class="cargo text-success fw-bold">Director</p>
                 <div class="info-extra">
-                    <span>📎 CAPSL N° 6.789</span>
-                    <span>🕒 12 años</span>
+                    <span>📎 Mat. 1092</span>
                 </div>
-                <p class="area">Arquitectura y Urbanismo</p>
+                <p class="area fw-bold">Martillero Público</p>
                 <p class="especialidad">
-                    Experta en diseño urbano y planificación territorial.
+                    Especialista en remates y subastas inmobiliarias con amplia experiencia en el sector.
                 </p>
             </div>
 
+            <!-- Card 3 -->
             <div class="card-profesional">
                 <div class="foto">
-                    <img src="imagenes/roberto.jpg" alt="Roberto Silva">
+                    <img src="assets/img/equipo/3.png" alt="Fátima Mancilla">
                 </div>
-                <h3>Dr. Roberto Silva</h3>
-                <p class="cargo">Asesor Legal</p>
-                <div class="info-extra">
-                    <span>📎 CASL N° 3.456</span>
-                    <span>🕒 20 años</span>
-                </div>
-                <p class="area">Derecho Inmobiliario</p>
+                <h3>Fátima Mancilla</h3>
+                <p class="cargo text-success fw-bold">Contadora</p>
+                <p class="area fw-bold">Agente Inmobiliario</p>
                 <p class="especialidad">
-                    Especialista en derecho inmobiliario y contratos de inversión.
+                    Especialista en derecho inmobiliario, contratos de inversión y asesoramiento financiero.
                 </p>
             </div>
 
+            <!-- Card 4 -->
             <div class="card-profesional">
                 <div class="foto">
-                    <img src="imagenes/ana.jpg" alt="Ana Morales">
+                    <img src="assets/img/equipo/4.png" alt="Maria Cecilia Gomis">
                 </div>
-                <h3>Lic. Ana Morales</h3>
-                <p class="cargo">Gerente Comercial</p>
+                <h3>Maria Cecilia Gomis</h3>
+                <p class="cargo text-success fw-bold">Martillera Pública</p>
                 <div class="info-extra">
-                    <span>📎 CPCE N° 9.012</span>
-                    <span>🕒 10 años</span>
+                    <span>📎 Mat. 714</span>
                 </div>
-                <p class="area">Administración y Finanzas</p>
+                <p class="area fw-bold">Agente Inmobiliario</p>
                 <p class="especialidad">
-                    Experta en análisis financiero y estructuración de inversiones.
+                    Experta en análisis financiero, estructuración de inversiones y gestión de propiedades.
                 </p>
             </div>
 

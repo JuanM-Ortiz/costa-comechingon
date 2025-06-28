@@ -155,7 +155,6 @@ body {
 .property-card:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
 }
 
 .property-image {
@@ -233,18 +232,17 @@ body {
 }
 
 .historia-fondo {
-  background-image: url('../img/main.jpg');
+  background-image: url('../img/nuestra-historia-hero.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   position: relative;
   min-height: 60vh;
   display: flex;
 }
 
 .historia-overlay {
-  background: rgba(36, 66, 16, 0.9);
   color: white;
+  background: rgba(36, 36, 36, 0.3);
   padding: 4rem 2rem;
   text-align: center;
   width: 100%;
@@ -302,6 +300,9 @@ body {
 }
 
 .navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 9999 !important;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
@@ -310,7 +311,7 @@ body {
 }
 
 .equipo {
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
   background: #f8f9fa;
   text-align: center;
 }
@@ -516,7 +517,7 @@ body {
   }
   
   .equipo {
-    padding: 3rem 1rem;
+    padding: 5rem 1rem;
   }
   
   .equipo-grid {
@@ -651,7 +652,7 @@ body {
   }
   
   .equipo {
-    padding: 2rem 0.5rem;
+    padding: 5rem 0.5rem;
   }
   
   .equipo h2 {
@@ -991,6 +992,26 @@ body {
   }
 }
 
+/* Ajustes específicos para pantallas de 1024px */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .equipo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .card-profesional {
+    padding: 2.5rem;
+  }
+  
+  .contenedor-iconos {
+    gap: 2rem;
+  }
+  
+  .icon-card {
+    width: 250px;
+  }
+}
+
 /* Ajustes para pantallas grandes */
 @media (min-width: 1200px) {
   .container {
@@ -1036,6 +1057,126 @@ body {
   
   .text-muted {
     color: #6c757d !important;
+  }
+}
+
+/* Estilos para servicios y comodidades en detalle de propiedad */
+.servicios-comodidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.servicios-comodidades span {
+  font-size: .9rem;
+  flex: 0 0 auto;
+  max-width: calc(25% - 0.75rem);
+  min-width: 120px;
+}
+
+.servicios-comodidades i {
+  color: #244210;
+  margin-right: 0.1rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive para servicios y comodidades */
+@media (max-width: 768px) {
+  .servicios-comodidades span {
+    max-width: calc(50% - 0.75rem);
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 576px) {
+  .servicios-comodidades span {
+    max-width: 100%;
+    min-width: auto;
+  }
+}
+
+/* Estilos específicos para el carousel de propiedades */
+#carouselPropiedad {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#carouselPropiedad .carousel-item {
+  height: 450px;
+}
+
+#carouselPropiedad .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#carouselPropiedad .carousel-control-prev,
+#carouselPropiedad .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#carouselPropiedad .carousel-control-prev {
+  left: 15px;
+}
+
+#carouselPropiedad .carousel-control-next {
+  right: 15px;
+}
+
+#carouselPropiedad .carousel-control-prev-icon,
+#carouselPropiedad .carousel-control-next-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive para el carousel */
+@media (max-width: 768px) {
+  #carouselPropiedad .carousel-item {
+    height: 300px;
+  }
+  
+  #carouselPropiedad .carousel-control-prev,
+  #carouselPropiedad .carousel-control-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  #carouselPropiedad .carousel-control-prev-icon,
+  #carouselPropiedad .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  #carouselPropiedad .carousel-item {
+    height: 250px;
+  }
+  
+  #carouselPropiedad .carousel-control-prev,
+  #carouselPropiedad .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+  
+  #carouselPropiedad .carousel-control-prev-icon,
+  #carouselPropiedad .carousel-control-next-icon {
+    width: 18px;
+    height: 18px;
   }
 }
 

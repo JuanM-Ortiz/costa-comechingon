@@ -92,14 +92,18 @@ if ($_POST['alta'] == 1) {
         $c++;
       }
 
+      $i = 0;
+      $hora = date("YmdHis");
       foreach ($imagenes as $imagen) {
+
         $filename = $hora . $imagen['name'];
         $location = $targetDir . "/" . $filename;
         if (!move_uploaded_file($imagen['tmp_name'], $location)) {
           return false;
         }
         $link = $filename;
-        $propiedadesModel->asignarImagen($idPropiedad, $link);
+        $propiedadesModel->asignarImagen($idPropiedad, $link, $i == 0 ? 1 : 0);
+        $i++;
       }
     }
 
@@ -218,7 +222,8 @@ function editarPropiedad($conexion, $propiedadesModel, $idPropiedad)
       $imagenes[$c]['tmp_name'] = $file;
       $c++;
     }
-
+    $hora = date("YmdHis");
+    $i = 0;
     foreach ($imagenes as $imagen) {
       $filename = $hora . $imagen['name'];
       $location = $targetDir . "/" . $filename;
@@ -226,7 +231,8 @@ function editarPropiedad($conexion, $propiedadesModel, $idPropiedad)
         return false;
       }
       $link = $filename;
-      $propiedadesModel->asignarImagen($idPropiedad, $link);
+      $propiedadesModel->asignarImagen($idPropiedad, $link, $i == 0 ? 1 : 0);
+      $i++;
     }
   }
 }

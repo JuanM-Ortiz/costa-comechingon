@@ -5,7 +5,7 @@
       <div class="col-lg-4 col-md-6 col-12">
         <a href="propiedadDetalle.php?id=<?= $propiedad['id'] ?>" class="property-card text-decoration-none text-dark d-block">
           <span class="badge bg-danger badge-custom"><?= strtoupper($propiedad['tipo_publicacion']) ?></span>
-          <img src="assets/img/propiedades/<?= $propiedad['imagen_portada'] ?>" class="property-image" alt="Imagen propiedad">
+          <img src="assets/img/propiedades/<?= $propiedad['id'] ?>/<?= $propiedad['imagen_portada'] ?>" class="property-image" alt="Imagen propiedad">
           <div class="p-3">
             <h5><?= $propiedad['titulo'] ?></h5>
             <p class="mb-1"><?= $propiedad['tipo_propiedad'] ?></p>
@@ -26,7 +26,7 @@
       <div class="col-lg-4 col-md-6 col-12">
         <a href="propiedadDetalle.php?id=<?= $propiedad['id'] ?>" class="property-card text-decoration-none text-dark d-block">
           <span class="badge bg-danger badge-custom"><?= strtoupper($propiedad['tipo_publicacion']) ?></span>
-          <img src="assets/img/propiedades/<?= $propiedad['imagen_portada'] ?>" class="property-image" alt="Imagen propiedad">
+          <img src="assets/img/propiedades/<?= $propiedad['id'] ?>/<?= $propiedad['imagen_portada'] ?>" class="property-image" alt="Imagen propiedad">
           <div class="p-3">
             <h5><?= $propiedad['titulo'] ?></h5>
             <p class="mb-1"><?= $propiedad['tipo_propiedad'] ?></p>
