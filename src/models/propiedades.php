@@ -201,8 +201,11 @@ class Propiedades
     }
 
     $query .= " ORDER BY p.id DESC";
-    if ($inicio || $resultadosPorPagina) {
-      $query .= " LIMIT $inicio, $resultadosPorPagina";
+    if ($inicio) {
+      $query .= " LIMIT $inicio";
+    }
+    if ($resultadosPorPagina) {
+      $query .= ",$resultadosPorPagina";
     }
 
     $resultado = $this->conexion->prepare($query);
@@ -229,8 +232,14 @@ class Propiedades
     return $resultado->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function getPropiedadesFiltered($localidad = null, $tipoPublicacion = null, $tipoPropiedad = null, $inicio, $resultadosPorPagina)
-  {
+  public function getPropiedadesFiltered(
+    $localidad = null,
+    $tipoPublicacion = null,
+    $tipoPropiedad = null,
+    $inicio,
+    $resultadosPorPagina,
+    $destacadas = false
+  ) {
     $and = '';
 
     if ($localidad) {
@@ -243,6 +252,10 @@ class Propiedades
 
     if ($tipoPropiedad) {
       $and .= " AND p.id_tipo_propiedad = {$tipoPropiedad}";
+    }
+
+    if ($destacadas) {
+      $and .= " AND p.es_destacada = 1 ORDER BY p.id DESC";
     }
 
     $query = "SELECT p.*, pt.precio, pt.moneda, tp.descripcion AS 'tipo_publicacion',

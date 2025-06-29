@@ -8,7 +8,7 @@ $conexion = Conexion::conectar();
 $bannersModel = new Banners($conexion);
 $propiedadesModel = new Propiedades($conexion);
 $banners = $bannersModel->getBanners(true);
-$propiedadesDestacadas = $propiedadesModel->getPropiedadesConPrecio(null, null, true);
+$propiedadesDestacadas = $propiedadesModel->getPropiedadesConPrecio(9, null, true);
 $localidadesModel = new Localidades($conexion);
 $tiposPropiedadModel = new TiposPropiedad($conexion);
 $localidades = $localidadesModel->getLocalidades();
@@ -75,7 +75,7 @@ $conexion = null;
   </section>
 
   <h2 class="text-center pt-5 mb-4 text-verde-oscuro">Propiedades Destacadas</h2>
-  <?php include_once 'modules/propiedadesMuestrario.php'; ?>
+  <?php include_once 'modules/propiedadesDestacadas.php'; ?>
 
   <?php include_once 'modules/nuestraHistoria.html'; ?>
 

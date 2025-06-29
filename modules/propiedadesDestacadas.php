@@ -1,8 +1,6 @@
 <div class="container py-5">
   <div class="row g-4">
-
-
-    <?php foreach ($propiedades as $propiedad): ?>
+    <?php foreach ($propiedadesDestacadas as $propiedad): ?>
 
       <div class="col-lg-4 col-md-6 col-12">
         <a href="propiedadDetalle.php?id=<?= $propiedad['id'] ?>" class="property-card text-decoration-none text-dark d-block">
@@ -28,12 +26,16 @@
         <h4 class="text-center">No se encontraron resultados</h4>
       </div>
     <?php endif; ?>
-    <?php if ($_GET['inicio'] == 'true'): ?>
-      <a href="propiedades.php?destacadas=true" class="btn btn-marron px-4 py-2 mt-3 shadow fw-bold rounded-pill">
-        Ver más propiedades
-      </a>
-    <?php endif; ?>
+
+
   </div>
+
+  <div class="d-flex justify-content-center pt-3">
+    <a href="propiedades.php?destacadas=true" class="btn btn-marron px-4 py-2 mt-3 shadow fw-bold rounded-pill">
+      Ver más
+    </a>
+  </div>
+
 </div>
 <?php if (!empty($propiedades)) : ?>
 
@@ -41,7 +43,7 @@
     <ul class="pagination justify-content-center">
       <?php if ($totalPaginas > 1) {
         for ($i = 1; $i <= $totalPaginas; $i++) {
-          echo '<li class="page-item"><a class="page-link bg-dark text-white" href="propiedades.php?pagina=' . $i . '&tipo_propiedad=' . $_GET['tipo_propiedad'] . '&localidad=' . $_GET['localidad']  . '&destacadas=' . $_GET['destacadas'] . '">' . $i . '</a></li>';
+          echo '<li class="page-item"><a class="page-link bg-dark text-white" href="propiedades.php?pagina=' . $i . '&tipo_propiedad=' . $_GET['tipo_propiedad'] . '&localidad=' . $_GET['localidad']  . '&destacadas=true">' . $i . '</a></li>';
         }
       } ?>
     </ul>

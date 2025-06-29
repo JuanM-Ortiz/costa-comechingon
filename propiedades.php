@@ -12,8 +12,9 @@ $tiposPropiedad = $tiposPropiedadModel->getTiposPropiedad();
 $paginaActual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 $resultadosPorPagina = 9;
 $inicio = ($paginaActual - 1) * $resultadosPorPagina;
+$destacadas = isset($_GET['destacadas']) ? $_GET['destacadas'] : false;
 if ($_GET['tipo_propiedad'] || $_GET['localidad']) {
-    $propiedades = $propiedadesModel->getPropiedadesFiltered($_GET['localidad'], null, $_GET['tipo_propiedad'], $inicio, $resultadosPorPagina);
+    $propiedades = $propiedadesModel->getPropiedadesFiltered($_GET['localidad'], null, $_GET['tipo_propiedad'], $inicio, $resultadosPorPagina, $destacadas);
 } else {
     $propiedades = $propiedadesModel->getPropiedadesConPrecio($inicio, $resultadosPorPagina);
 }
