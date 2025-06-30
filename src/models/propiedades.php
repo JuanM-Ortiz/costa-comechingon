@@ -84,6 +84,7 @@ class Propiedades
     id_localidad = '{$params['id_localidad']}',
     id_zona = '{$params['id_zona']}',
     maps_url = '{$params['maps_url']}',
+    id_tipo_propiedad = '{$params['id_tipo_propiedad']}',
     es_destacada = '{$params['es_destacada']}'";
 
     $query .= " WHERE id = $idPropiedad";
@@ -347,6 +348,14 @@ class Propiedades
   public function getPrecioPropiedadById($idPropiedad)
   {
     $query = "SELECT precio, moneda FROM propiedades_tipo_publicaciones WHERE id_propiedad = {$idPropiedad}";
+    $resultado = $this->conexion->prepare($query);
+    $resultado->execute();
+    return $resultado->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  public function getTipoPropiedadById($idPropiedad)
+  {
+    $query = "SELECT tpr.descripcion FROM propiedades p JOIN tipos_propiedad tpr ON p.id_tipo_propiedad = tpr.id WHERE p.id = {$idPropiedad}";
     $resultado = $this->conexion->prepare($query);
     $resultado->execute();
     return $resultado->fetchAll(PDO::FETCH_ASSOC);

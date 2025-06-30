@@ -15,6 +15,9 @@ $imagenes = $propiedadesModel->getImagenesByPropiedadId($_GET['id']);
 $servicios = $serviciosModel->getServiciosByPropiedadId($_GET['id']);
 $comodidades = $comodidadesModel->getComodidadesByPropiedadId($_GET['id']);
 $index = 0;
+$tipoPropiedad = $propiedadesModel->getTipoPropiedadById($_GET['id']);
+$tipoPropiedad = strtolower($tipoPropiedad[0]['descripcion']);
+$esLote = $tipoPropiedad == 'lote';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -92,7 +95,9 @@ $index = 0;
                 <div class="bg-verde-oscuro text-white rounded p-3 shadow-sm">
                     <h5 class="fw-bold mb-3">Detalles del Inmueble</h5>
                     <p class="mb-1">Superficie: <strong><?= $propiedad[0]['superficie'] ?> m²</strong></p>
-                    <p class="mb-1">Metros Cubiertos: <strong><?= $propiedad[0]['superficie_cubierta'] ?? '0' ?> m²</strong></p>
+                    <?php if (!$esLote) : ?>
+                        <p class="mb-1">Metros Cubiertos: <strong><?= $propiedad[0]['superficie_cubierta'] ?? '0' ?> m²</strong></p>
+                    <?php endif; ?>
                     <p class="mb-0">Código: <strong><?= $propiedad[0]['codigo'] ?></strong></p>
                 </div>
             </div>
@@ -123,12 +128,14 @@ $index = 0;
                 </div>
 
                 <!-- Mapa -->
-                <div class="mt-5">
-                    <h4 class="fw-bold mb-3 text-center text-verde-oscuro">Ubicación</h4>
-                    <div class="ratio ratio-16x9">
-                        <?= $propiedad[0]['maps_url'] ?>
+                <?php if ($propiedad[0]['maps_url'] != null) : ?>
+                    <div class="mt-5">
+                        <h4 class="fw-bold mb-3 text-center text-verde-oscuro">Ubicación</h4>
+                        <div class="ratio ratio-16x9">
+                            <?= $propiedad[0]['maps_url'] ?>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
 
             <!-- Formulario de contacto -->

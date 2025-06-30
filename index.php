@@ -7,7 +7,7 @@ include_once 'src/models/tiposPropiedad.php';
 $conexion = Conexion::conectar();
 $bannersModel = new Banners($conexion);
 $propiedadesModel = new Propiedades($conexion);
-$banners = $bannersModel->getBanners(true);
+$banners = $bannersModel->getBanners(false);
 $propiedadesDestacadas = $propiedadesModel->getPropiedadesConPrecio(9, null, true);
 $localidadesModel = new Localidades($conexion);
 $tiposPropiedadModel = new TiposPropiedad($conexion);

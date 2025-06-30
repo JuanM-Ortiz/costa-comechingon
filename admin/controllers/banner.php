@@ -24,7 +24,7 @@ if ($_POST['restaurar'] && $_POST['restaurar'] != '') {
 if ($_POST['getBanners']) {
   $conexion = Conexion::conectar();
   $bannersModel = new Banners($conexion);
-  $banners = $bannersModel->getBanners(true);
+  $banners = $bannersModel->getBanners(false);
   echo json_encode($banners);
   return;
 }

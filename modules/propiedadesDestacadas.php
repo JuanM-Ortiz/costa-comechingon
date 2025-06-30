@@ -1,7 +1,9 @@
 <div class="container py-5">
   <div class="row g-4">
     <?php foreach ($propiedadesDestacadas as $propiedad): ?>
-
+      <?php
+      $esLote = strtolower($propiedad['tipo_propiedad']) == 'lote';
+      ?>
       <div class="col-lg-4 col-md-6 col-12">
         <a href="propiedadDetalle.php?id=<?= $propiedad['id'] ?>" class="property-card text-decoration-none text-dark d-block">
           <span class="badge bg-danger badge-custom"><?= strtoupper($propiedad['tipo_publicacion']) ?></span>
@@ -13,7 +15,7 @@
               <i class="fas fa-map-marker-alt me-1 iconos"></i> <?= ucfirst($propiedad['zona']) . ', ' . ucfirst($propiedad['localidad']) ?>
             </p>
             <div class="d-flex justify-content-between small">
-              <span class="text-dark"><i class="fas fa-ruler-combined me-1 iconos"></i> <?= $propiedad['superficie_cubierta'] ?> m²</span>
+              <span class="text-dark"><i class="fas fa-ruler-combined me-1 iconos"></i> <?= $esLote ? $propiedad['superficie'] : $propiedad['superficie_cubierta'] ?> m²</span>
               <span><strong><?= $propiedad['moneda'] == 1 ? '$' : 'u$s' ?> <?= number_format($propiedad['precio'], 2, ',', '.') ?> </strong></span>
             </div>
           </div>
