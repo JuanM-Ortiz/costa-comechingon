@@ -19,7 +19,7 @@
     <section class="container section-bajo-navbar">
         <div class="text-center mb-5">
             <h2 class="fw-bold text-verde-oscuro display-5">Contactanos</h2>
-            <p class="text-verde-oscuro">¿Interesado en conocer más sobre nuestros desarrollos? Completá el formulario y un asesor especializado se pondrá en contacto contigo a la brevedad.</p>
+            <p class="text-verde-oscuro">¿Interesado en conocer más sobre nuestros desarrollos? Completá el formulario y un asesor especializado se pondrá en contacto a la brevedad.</p>
         </div>
 
         <div class="row g-4">
@@ -39,7 +39,7 @@
                                 <input type="tel" class="form-control" placeholder="Teléfono *" required>
                             </div>
                             <div class="col-12 mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Cuéntanos más sobre tu proyecto o consulta..." required></textarea>
+                                <textarea class="form-control" rows="5" placeholder="Contános más sobre tu proyecto o consulta..." required></textarea>
                             </div>
                         </div>
 

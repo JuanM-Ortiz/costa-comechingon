@@ -86,7 +86,7 @@
         <h2 class="text-verde-oscuro display-5 fw-bold">Nuestro equipo profesional</h2>
         <p class="text-verde-oscuro">
             Contamos con un equipo multidisciplinario de profesionales matriculados y con amplia
-            experiencia en el sector inmobiliario y de desarrollo urbano.
+            experiencia en el sector inmobiliario y desarrollo urbano.
         </p>
 
         <div class="equipo-grid">
