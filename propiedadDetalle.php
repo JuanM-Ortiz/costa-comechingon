@@ -98,6 +98,15 @@ $esLote = $tipoPropiedad == 'lote';
                     <?php if (!$esLote) : ?>
                         <p class="mb-1">Metros Cubiertos: <strong><?= $propiedad[0]['superficie_cubierta'] ?? '0' ?> m²</strong></p>
                     <?php endif; ?>
+                    <?php if (!$esLote && $propiedad[0]['pisos'] > 0) : ?>
+                        <p class="mb-1"><i class="fa-solid fa-stairs"></i> Pisos: <strong><?= $propiedad[0]['pisos'] ?></strong></p>
+                    <?php endif; ?>
+                    <?php if (!$esLote && $propiedad[0]['baños'] > 0) : ?>
+                        <p class="mb-1"><i class="fa-solid fa-bath"></i> Baños: <strong><?= $propiedad[0]['baños'] ?></strong></p>
+                    <?php endif; ?>
+                    <?php if (!$esLote && $propiedad[0]['dormitorios'] > 0) : ?>
+                        <p class="mb-1"><i class="fa-solid fa-bed"></i> Dormitorios: <strong><?= $propiedad[0]['dormitorios'] ?></strong></p>
+                    <?php endif; ?>
                     <p class="mb-0">Código: <strong><?= $propiedad[0]['codigo'] ?></strong></p>
                 </div>
             </div>
