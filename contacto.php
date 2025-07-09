@@ -39,7 +39,7 @@
                                 <input type="tel" class="form-control" placeholder="Teléfono *" required>
                             </div>
                             <div class="col-12 mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Contános más sobre tu proyecto o consulta..." required></textarea>
+                                <textarea class="form-control" rows="5" placeholder="Contanos más sobre tu proyecto o consulta..." required></textarea>
                             </div>
                         </div>
 
@@ -56,9 +56,9 @@
             <div class="col-lg-4">
                 <div class="bg-white p-4 rounded shadow-sm mb-4">
                     <h6 class="fw-bold mb-3 text-verde-oscuro">Información de Contacto</h6>
-                    <p><i class="bi bi-telephone-fill me-2"></i>+54 9 266 123-4567 <br><small class="text-muted">Lun a Vie: 9:00 - 18:00</small></p>
-                    <p><i class="bi bi-envelope-fill me-2"></i>info@costacomechingon.com <br><small class="text-muted">Respuesta en 24hs</small></p>
-                    <p><i class="bi bi-geo-alt-fill me-2"></i>Av. del Sol 123, <br>Villa de Merlo, San Luis</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i>+54 9 266 416-1271 <br><small class="text-muted">Lun a Vie: 9:00 - 18:00</small></p>
+                    <p><i class="bi bi-envelope-fill me-2"></i>costacomechingonmerlo@gmail.com<br></p>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i>Ruta 1 N° 1953, <br>Villa de Merlo, San Luis</p>
                     <p><i class="bi bi-clock-fill me-2"></i>
                         <strong>Horarios de atención</strong><br>
                         Lun a Vie: 9:00 - 18:00<br>
@@ -71,7 +71,7 @@
                     <p class="mb-2 fw-semibold">¿Necesitás respuesta inmediata?<br>
                         <span class="fw-normal">Chateá con nosotros por WhatsApp y obtené información al instante</span>
                     </p>
-                    <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="btn btn-verde-claro w-100 fw-bold">
+                    <a href="https://wa.me/5492664161271" target="_blank" class="btn btn-verde-claro w-100 fw-bold">
                         <i class="bi bi-whatsapp me-2"></i>Abrir WhatsApp
                     </a>
                 </div>

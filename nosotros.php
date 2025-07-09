@@ -86,7 +86,7 @@
         <h2 class="text-verde-oscuro display-5 fw-bold">Nuestro equipo profesional</h2>
         <p class="text-verde-oscuro">
             Contamos con un equipo multidisciplinario de profesionales matriculados y con amplia
-            experiencia en el sector inmobiliario y desarrollo urbano.
+            experiencia en el sector inmobiliario.
         </p>
 
         <div class="equipo-grid">
@@ -95,11 +95,11 @@
                 <div class="foto">
                     <img src="assets/img/equipo/1.png" alt="Cristina - Costa Comechingón">
                 </div>
-                <h3>Cristina</h3>
+                <h3>Maria Cristina Fagiano</h3>
                 <p class="cargo text-success fw-bold">Fundadora & Directora</p>
                 <p class="area fw-bold">Gestión Inmobiliaria</p>
                 <p class="especialidad">
-                    Fundadora de Costa Comechingón, especialista en asesoramiento personalizado y desarrollo de proyectos inmobiliarios.
+                    Fundadora de Costa Comechingón. Acompaña a cada cliente en el desarrollo de su proyecto.
                 </p>
             </div>
 
@@ -115,7 +115,7 @@
                 </div>
                 <p class="area fw-bold">Martillero Público</p>
                 <p class="especialidad">
-                    Especialista en remates y subastas inmobiliarias con amplia experiencia en el sector.
+                    Martillero con amplia trayectoria en remates y operaciones inmobiliarias.
                 </p>
             </div>
 
@@ -128,7 +128,7 @@
                 <p class="cargo text-success fw-bold">Contadora</p>
                 <p class="area fw-bold">Agente Inmobiliario</p>
                 <p class="especialidad">
-                    Especialista en derecho inmobiliario, contratos de inversión y asesoramiento financiero.
+                    Agente inmobiliaria del equipo. Asesora en aspectos legales y contratos.</p>
                 </p>
             </div>
 
@@ -144,7 +144,7 @@
                 </div>
                 <p class="area fw-bold">Agente Inmobiliario</p>
                 <p class="especialidad">
-                    Experta en análisis financiero, estructuración de inversiones y gestión de propiedades.
+                    Agente inmobiliaria del equipo. Brinda atención personalizada en compra y venta de propiedades.
                 </p>
             </div>
 

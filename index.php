@@ -81,7 +81,7 @@ $conexion = null;
 
   <?php include_once 'modules/footer.html'; ?>
   <div class="whatsapp-floating hidden">
-    <a href="https://wa.me/5492664757332" target="_blank" class="mx-3 text-verde">
+    <a href="https://wa.me/5492664161271" target="_blank" class="mx-3 text-verde">
       <i class="fab fa-whatsapp fa-6x footer-icon"></i>
     </a>
   </div>
