@@ -46,7 +46,7 @@ $totalPaginas = ceil($totalRegistros / $resultadosPorPagina);
         <div class="container">
             <h2 class="display-5 fw-bold text-verde-oscuro">Nuestras Propiedades</h2>
             <p class="lead text-verde-oscuro">
-                Explora nuestra selección de propiedades en Merlo, San Luis y encuentra la que mejor se adapte a tus necesidades.
+                Explorá nuestra selección de propiedades en Merlo, San Luis y encontrá la que mejor se adapte a tus necesidades.
             </p>
         </div>
     </section>

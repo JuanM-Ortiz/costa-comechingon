@@ -56,13 +56,13 @@
   <h5>Encontrá tu próxima inversión</h5>
   <form class="d-flex justify-content-center gap-2 mt-3 flex-wrap" action="propiedades.php" method="get">
     <select class="form-select w-auto" name="tipo_propiedad">
-      <option selected disabled>Seleccione un tipo de propiedad...</option>
+      <option selected disabled>Tipo de propiedad...</option>
       <?php foreach ($tiposPropiedad as $tipo): ?>
         <option value="<?= $tipo['id'] ?>"><?= $tipo['descripcion'] ?></option>
       <?php endforeach; ?>
     </select>
     <select class="form-select w-auto" name="localidad">
-      <option selected disabled>Seleccione una localidad...</option>
+      <option selected disabled>Localidad...</option>
       <?php foreach ($localidades as $localidad): ?>
         <option value="<?= $localidad['id'] ?>"><?= $localidad['descripcion'] ?></option>
       <?php endforeach; ?>
