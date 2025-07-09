@@ -52,7 +52,7 @@ $conexion = null;
               <div class="container position-relative text-white" style="z-index: 2;">
                 <h1 class="display-4 fw-bold"><?= $banner['titulo'] ?></h1>
                 <p class="lead"><?= $banner['descripcion'] ?></p>
-                <a href="#" class="btn btn-marron px-4 py-2 mt-3 shadow fw-bold rounded-pill">
+                <a href="propiedades.php" class="btn btn-marron px-4 py-2 mt-3 shadow fw-bold rounded-pill">
                   Ver Lotes Disponibles
                 </a>
               </div>
